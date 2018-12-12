@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.1.3
+### Changed
+- **gulpfile:**
+    - switch package's `main` to `cjs` and `module` to `es6`
+
 ## Release 1.1.2
 ### Changed
 - **icons/Basic/24/Hide_24.svg**
