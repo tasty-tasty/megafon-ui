@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OldProductCardFeaturesTop /> it renders OldProductCardFeaturesTop 1`] = `
+<div
+  className="old-product-card-features-top"
+>
+  <div
+    className="old-product-card-features-top__inner"
+    key="test0"
+  >
+    <Header
+      as="h3"
+      className="old-product-card-features-top__title"
+      color="black"
+      margin={false}
+    >
+      test
+    </Header>
+    <div
+      className="old-product-card-features-top__text"
+    >
+      test
+    </div>
+    <DropdownSocialList
+      icons={
+        Array [
+          Object {
+            "svgIcon": <test-file-stub />,
+            "title": "test",
+          },
+        ]
+      }
+      maxIconNumber={6}
+    />
+  </div>
+</div>
+`;

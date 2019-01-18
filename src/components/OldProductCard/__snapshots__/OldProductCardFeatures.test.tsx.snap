@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OldProductCardFeatures /> it renders OldProductCardFeatures 1`] = `
+<div
+  className="old-product-card-features"
+>
+  <OldProductCardFeaturesTop
+    className="old-product-card-features__top"
+    params={
+      Array [
+        Object {
+          "caption": "на видео, соц-сети и мессенджеры",
+          "title": "Безлимитный интернет",
+          "value": "test",
+        },
+      ]
+    }
+    socialIcons={Array []}
+  />
+  <OldProductCardFeaturesBottom
+    className="old-product-card-features__bottom"
+    key="0"
+    params={
+      Array [
+        Object {
+          "title": "Youtube, Rutube, Vimeo",
+        },
+      ]
+    }
+  />
+  <OldProductCardFeaturesBottom
+    className="old-product-card-features__bottom"
+    key="1"
+    params={
+      Array [
+        Object {
+          "title": "WhatsApp, Viber, Facebook Messanger, Snapchat, eMotion",
+        },
+      ]
+    }
+  />
+  <OldProductCardFeaturesBottom
+    className="old-product-card-features__bottom"
+    key="2"
+    params={
+      Array [
+        Object {
+          "title": "Вконтакте, Одноклассники, Facebook, Instagram, Twitter",
+        },
+      ]
+    }
+  />
+</div>
+`;

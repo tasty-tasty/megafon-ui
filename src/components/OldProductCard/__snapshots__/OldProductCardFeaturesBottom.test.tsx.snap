@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OldProductCardFeaturesBottom /> it renders OldProductCardFeaturesBottom 1`] = `
+<div
+  className="old-product-card-features-bottom"
+>
+  <Header
+    as="h3"
+    className="old-product-card-features-bottom__title"
+    color="black"
+    margin={false}
+  >
+    test
+  </Header>
+  <ul
+    className="old-product-card-features-bottom__list"
+  >
+    <li
+      className="old-product-card-features-bottom__item old-product-card-features-bottom__item_icon"
+      key="test"
+    >
+      <test-file-stub
+        className="old-product-card-features-bottom__item-icon"
+      />
+      <Header
+        as="h5"
+        className="old-product-card-features-bottom__item-title"
+        color="black"
+        margin={false}
+      >
+        test
+      </Header>
+      <Paragraph
+        className="old-product-card-features-bottom__item-text"
+        color="black"
+        marginAll="none"
+        sizeAll="small"
+        weight="regular"
+      >
+        test
+      </Paragraph>
+    </li>
+  </ul>
+</div>
+`;

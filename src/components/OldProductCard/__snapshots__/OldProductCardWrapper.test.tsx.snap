@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OldProductCardWrapper /> it renders OldProductCardWrapper 1`] = `
+<div
+  className="old-product-card-wrapper old-product-card-wrapper_hint old-product-card-wrapper_hint_green old-product-card-wrapper_bl old-product-card-wrapper_br"
+  onClick={[Function]}
+>
+  <div
+    className="old-product-card-wrapper__inner"
+  >
+    <div
+      className="old-product-card-wrapper__hint-box"
+    >
+      <div
+        className="old-product-card-wrapper__hint-text"
+      >
+        Рекоммендуем
+      </div>
+    </div>
+    <div
+      className="old-product-card-wrapper__container"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<OldProductCardWrapper /> it renders without hint 1`] = `
+<div
+  className="old-product-card-wrapper"
+  onClick={[Function]}
+>
+  <div
+    className="old-product-card-wrapper__inner"
+  >
+    <div
+      className="old-product-card-wrapper__container"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
