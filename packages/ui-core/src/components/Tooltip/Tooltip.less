@@ -24,8 +24,24 @@
         }
     }
 
+    &[data-popper-placement='right'] {
+        padding-left: 12px;
+    }
+
+    &[data-popper-placement='left'] {
+        padding-right: 12px;
+    }
+
+    &[data-popper-placement='top'] {
+        padding-bottom: 12px;
+    }
+
+    &[data-popper-placement='bottom'] {
+        padding-top: 12px;
+    }
+
     [data-popper-placement='right'] &__arrow {
-        left: -10px;
+        left: 2px;
         width: 10px;
         height: 26px;
 
@@ -36,7 +52,7 @@
     }
 
     [data-popper-placement='left'] &__arrow {
-        right: -10px;
+        right: 2px;
         width: 10px;
         height: 26px;
 
@@ -47,7 +63,7 @@
     }
 
     [data-popper-placement='top'] &__arrow {
-        bottom: -10px;
+        bottom: 2px;
         width: 26px;
         height: 10px;
 
@@ -58,7 +74,7 @@
     }
 
     [data-popper-placement='bottom'] &__arrow {
-        top: -10px;
+        top: 2px;
         width: 26px;
         height: 10px;
 

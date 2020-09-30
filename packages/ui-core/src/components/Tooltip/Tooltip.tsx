@@ -37,12 +37,6 @@ const Tooltip: React.FC<ITooltipProps>  = ({
                 options: { element: arrowElement },
             },
             {
-                name: 'offset',
-                options: {
-                    offset: [0, 15],
-                },
-            },
-            {
                 name: 'flip',
                 options: {
                     fallbackPlacements: ['left', 'right' , 'top' , 'bottom'],
