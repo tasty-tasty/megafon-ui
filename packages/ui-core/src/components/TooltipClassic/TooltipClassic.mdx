@@ -1,0 +1,80 @@
+---
+name: TooltipClassic
+menu: Components
+route: components/tooltip-classic
+---
+
+import { Playground, Props } from 'docz';
+import TooltipClassic from './TooltipClassic';
+import Paragraph from '../Paragraph/Paragraph';
+import Button from '../Button/Button';
+import { TooltipClassicWrapper } from './TooltipClassic.docz';
+
+# TooltipClassic
+
+## Properties
+
+<Props of={TooltipClassic} />
+
+```javascript
+const TooltipClassicWrapper = ({ children }) => {
+    const [ isOpened, setIsOpen ] = React.useState<boolean>();
+
+    const closeDrop = (): void => setIsOpen(false);
+
+    return (
+        <div style={{ height: '400px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
+            {children({isOpened, closeDrop})}
+        </div>
+    );
+};
+```
+
+## Basic usage
+
+<Playground>
+    <TooltipClassicWrapper>
+        {({isOpened, closeDrop}) => (
+            <Paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud
+                <TooltipClassic
+                    triggerElement={<span style={{ cursor: "pointer", color: "red"}}>exercitation</span>}
+                >
+                    <Paragraph>
+                        Please be careful when filling out the forms
+                    </Paragraph>
+                </TooltipClassic>
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </Paragraph>
+        )}
+    </TooltipClassicWrapper>
+</Playground>
+
+
+## Trigger drop from Tooltip content
+
+<Playground>
+    <TooltipClassicWrapper>
+        {({isOpened, closeDrop}) => (
+            <Paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud
+                <TooltipClassic
+                    isOpened={isOpened}
+                    triggerElement={<span style={{ cursor: "pointer", color: "red"}}>exercitation</span>}
+                >
+                    <Paragraph>
+                        Please be careful when filling out the forms
+                    </Paragraph>
+                    <Button onClick={closeDrop}>Close</Button>
+                </TooltipClassic>
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </Paragraph>
+        )}
+    </TooltipClassicWrapper>
+</Playground>

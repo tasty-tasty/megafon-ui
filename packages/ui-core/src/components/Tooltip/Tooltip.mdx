@@ -1,0 +1,216 @@
+---
+name: Tooltip
+menu: Components
+route: components/tooltip
+---
+
+import { Playground, Props } from 'docz';
+import Tooltip from './Tooltip';
+import Paragraph from '../Paragraph/Paragraph';
+import Button from '../Button/Button';
+import { TooltipWrapper } from './Tooltip.docz';
+
+# Tooltip
+
+## Properties
+
+<Props of={Tooltip} />
+
+```javascript
+const TooltipWrapper = ({ children }) => {
+    const [referenceElement, setReferenceElement] = React.useState<Element | null>(null);
+
+    const dropRef = React.useRef<Element>(null);
+    const [ isOpen, toggleDrop ] = useDrop(dropRef);
+
+    return (
+        <div style={{ height: '400px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
+            {children({ referenceElement,  setReferenceElement, dropRef, isOpen, toggleDrop })}
+        </div>
+    );
+};
+```
+
+## Basic usage
+
+<Playground>
+    <TooltipWrapper>
+        {({referenceElement, setReferenceElement}) => (
+            <>
+                <Paragraph>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud
+                    <span
+                        ref={setReferenceElement}
+                        style={{ cursor: "pointer", color: "red"}}
+                    >
+                        exercitation
+                    </span> ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </Paragraph>
+                <Tooltip referenceElement={referenceElement}>
+                    <Paragraph size="small" hasMargin={false}>
+                        Please be careful when filling out the forms
+                    </Paragraph>
+                </Tooltip>
+            </>
+        )}
+    </TooltipWrapper>
+</Playground>
+
+## With drop down. Mouse click event usage
+
+<Playground>
+    <TooltipWrapper>
+        {({
+            referenceElement,
+            setReferenceElement,
+            dropRef,
+            isOpen,
+            toggleDrop
+        }) => (
+            <>
+                <Paragraph>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud
+                    <span
+                        ref={setReferenceElement}
+                        onClick={toggleDrop}
+                        style={{ cursor: "pointer", color: "red"}}
+                    >
+                        exercitation
+                    </span> ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </Paragraph>
+                <span
+                    ref={dropRef}
+                    style={{ visibility: isOpen ? "visible": "hidden" }}
+                >
+                    <Tooltip referenceElement={referenceElement}>
+                        <Paragraph size="small" hasMargin={false}>
+                            Please be careful when filling out the forms
+                        </Paragraph>
+                    </Tooltip>
+                </span>
+            </>
+        )}
+    </TooltipWrapper>
+</Playground>
+
+## With drop down. Mouse hover events usage
+
+<Playground>
+    <TooltipWrapper>
+        {({
+            referenceElement,
+            setReferenceElement,
+            dropRef,
+            isOpen,
+            openDrop,
+            closeDrop
+        }) => (
+            <>
+                <Paragraph>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud
+                    <span
+                        ref={setReferenceElement}
+                        onMouseEnter={openDrop}
+                        onMouseLeave={closeDrop}
+                        style={{ cursor: "pointer", color: "red"}}
+                    >
+                        exercitation
+                    </span> ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </Paragraph>
+                <span
+                    ref={dropRef}
+                    style={{ visibility: isOpen ? "visible": "hidden" }}
+                >
+                    <Tooltip referenceElement={referenceElement}>
+                        <Paragraph size="small" hasMargin={false}>
+                            Please be careful when filling out the forms
+                        </Paragraph>
+                    </Tooltip>
+                </span>
+            </>
+        )}
+    </TooltipWrapper>
+</Playground>
+
+## With drop down. Trigger drop from Tooltip content
+
+<Playground>
+    <TooltipWrapper>
+        {({
+            referenceElement,
+            setReferenceElement,
+            dropRef,
+            isOpen,
+            toggleDrop,
+        }) => (
+            <div>
+                <div
+                    ref={setReferenceElement}
+                    onClick={toggleDrop}
+                >
+                    <Button>Trigger</Button>
+                </div>
+                <div
+                    ref={dropRef}
+                    style={{
+                        visibility: isOpen ? "visible": "hidden"
+                    }}
+                >
+                    <Tooltip referenceElement={referenceElement}>
+                        <Paragraph>
+                            Please be careful when filling out the forms
+                        </Paragraph>
+                        <Button onClick={toggleDrop}>Close</Button>
+                    </Tooltip>
+                </div>
+            </div>
+        )}
+    </TooltipWrapper>
+</Playground>
+
+## With drop down. Mouse hover events usage on content block
+
+<Playground>
+    <TooltipWrapper>
+        {({
+            referenceElement,
+            setReferenceElement,
+            dropRef,
+            isOpen,
+            openDrop,
+            closeDrop,
+            toggleDrop,
+        }) => (
+            <div
+                onMouseEnter={openDrop}
+                onMouseLeave={closeDrop}
+                >
+                <div ref={setReferenceElement}>
+                    <Button>Trigger</Button>
+                </div>
+                <div
+                    ref={dropRef}
+                    style={{
+                        visibility: isOpen ? "visible": "hidden"
+                    }}
+                >
+                    <Tooltip referenceElement={referenceElement}>
+                        <Paragraph>
+                            Please be careful when filling out the forms
+                        </Paragraph>
+                        <Button onClick={toggleDrop}>Close</Button>
+                    </Tooltip>
+                </div>
+            </div>
+        )}
+    </TooltipWrapper>
+</Playground>

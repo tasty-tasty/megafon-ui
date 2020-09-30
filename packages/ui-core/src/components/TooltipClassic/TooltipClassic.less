@@ -1,0 +1,88 @@
+@import '~styles/base.less';
+@b: e('.mfui-beta-tooltip-classic');
+
+@{b} {
+    display: inline;
+
+    &__trigger {
+        display: inline;
+    }
+
+    &__drop {
+        visibility: hidden;
+
+        &_open {
+            visibility: visible;
+        }
+    }
+
+    &__drop-inner {
+        display: inline;
+    }
+
+    &__content {
+        padding: 20px;
+    }
+
+    &__arrow {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        overflow: hidden;
+
+        &:before {
+            box-sizing: border-box;
+            position: absolute;
+            content: '';
+            width: 16px;
+            height: 16px;
+            background-color: @clearWhite;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+            transform: rotate(45deg);
+        }
+    }
+
+    [data-popper-placement='right'] &__arrow {
+        left: -10px;
+        width: 10px;
+        height: 26px;
+
+        &:before {
+            top: 6px;
+            left: 6px;
+        }
+    }
+
+    [data-popper-placement='left'] &__arrow {
+        right: -10px;
+        width: 10px;
+        height: 26px;
+
+        &:before {
+            top: 6px;
+            right: 6px;
+        }
+    }
+
+    [data-popper-placement='top'] &__arrow {
+        bottom: -10px;
+        width: 26px;
+        height: 10px;
+
+        &:before {
+            bottom: 6px;
+            right: 6px;
+        }
+    }
+
+    [data-popper-placement='bottom'] &__arrow {
+        top: -10px;
+        width: 26px;
+        height: 10px;
+
+        &:before {
+            top: 6px;
+            right: 6px;
+        }
+    }
+}

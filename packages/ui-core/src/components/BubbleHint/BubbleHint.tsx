@@ -1,8 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './BubbleHint.less';
-import { Manager, Popper, Target, Arrow, IPopperProps } from 'react-popper';
-import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 
 export interface IBubbleHintProps {
@@ -35,7 +33,6 @@ interface IBubbleHintState {
     show: boolean;
 }
 
-const cn = cnCreate('mfui-beta-bubble-hint');
 class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintState> {
     static propTypes = {
         popupPadding: PropTypes.oneOf(['normal', 'bottom-small', 'none']),
@@ -137,46 +134,8 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
     }
 
     render() {
-        const popupClasses = { show: this.state.show, width: this.props.popupWidth };
-        const popupOptions: IPopperProps = {
-            flip: {
-                behavior: ['right', 'left', 'bottom', 'top'],
-            },
-        };
-
         return (
-            <Manager className={cn('', { 'margin-left': this.props.marginLeft }, this.props.className)}>
-                <div className={cn('container')}
-                    {...this.getHandlers()}
-                    ref={this.getContainer}
-                >
-                    <Target className={cn('target')}>
-                        <div
-                            className={cn('trigger')}
-                            ref={this.getTrigger}
-                        >
-                            {this.props.trigger}
-                        </div>
-                    </Target>
-                    <Popper eventsEnabled={false}
-                        className={cn('popup', popupClasses)}
-                        modifiers={popupOptions}
-                        placement={this.props.placement}
-                    >
-                        <div
-                            className={cn('popup-inner', {
-                                padding: this.props.popupPadding,
-                                align: this.props.popupAlign,
-                            })}
-                        >
-                            <div className={cn('content')}>
-                                {this.props.children}
-                            </div>
-                            <Arrow className={cn('arrow')} />
-                        </div>
-                    </Popper>
-                </div>
-            </Manager>
+            <div> old BubbleHint </div>
         );
     }
 }
